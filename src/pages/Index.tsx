@@ -1,12 +1,28 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import Header from "@/components/Header";
+import HeroSection from "@/components/HeroSection";
+import RegisterSection from "@/components/RegisterSection";
+import EventDetailsSection from "@/components/EventDetailsSection";
+import Footer from "@/components/Footer";
+import Overlays from "@/components/Overlays";
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="relative min-h-screen bg-background">
+      {/* Visual Overlays */}
+      <Overlays />
+      
+      {/* Navigation */}
+      <Header />
+      
+      {/* Main Content */}
+      <main>
+        <HeroSection />
+        <RegisterSection />
+        <EventDetailsSection />
+      </main>
+      
+      {/* Footer */}
+      <Footer />
     </div>
   );
 };

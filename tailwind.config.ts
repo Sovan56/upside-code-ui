@@ -13,6 +13,10 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        display: ['Cinzel', 'serif'],
+        body: ['Inter', 'sans-serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -47,15 +51,13 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        sidebar: {
-          DEFAULT: "hsl(var(--sidebar-background))",
-          foreground: "hsl(var(--sidebar-foreground))",
-          primary: "hsl(var(--sidebar-primary))",
-          "primary-foreground": "hsl(var(--sidebar-primary-foreground))",
-          accent: "hsl(var(--sidebar-accent))",
-          "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
-          border: "hsl(var(--sidebar-border))",
-          ring: "hsl(var(--sidebar-ring))",
+        // Stranger Things custom colors
+        blood: "hsl(var(--blood-red))",
+        crimson: "hsl(var(--neon-crimson))",
+        maroon: "hsl(var(--dark-maroon))",
+        glow: {
+          orange: "hsl(var(--glow-orange))",
+          blue: "hsl(var(--electric-blue))",
         },
       },
       borderRadius: {
@@ -65,25 +67,67 @@ export default {
       },
       keyframes: {
         "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+        "flicker": {
+          "0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100%": { opacity: "1" },
+          "20%, 21.999%, 63%, 63.999%, 65%, 69.999%": { opacity: "0.4" },
+        },
+        "flicker-subtle": {
+          "0%, 100%": { opacity: "1" },
+          "50%": { opacity: "0.95" },
+          "52%": { opacity: "0.85" },
+          "54%": { opacity: "1" },
+        },
+        "pulse-glow": {
+          "0%, 100%": { boxShadow: "0 0 20px hsl(348 83% 47% / 0.5), 0 0 40px hsl(348 83% 47% / 0.3)" },
+          "50%": { boxShadow: "0 0 30px hsl(348 83% 47% / 0.8), 0 0 60px hsl(348 83% 47% / 0.5)" },
+        },
+        "float": {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-10px)" },
+        },
+        "scroll-bounce": {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(10px)" },
+        },
+        "lightning": {
+          "0%, 100%": { opacity: "0" },
+          "5%": { opacity: "0.8" },
+          "10%": { opacity: "0" },
+          "15%": { opacity: "0.6" },
+          "20%": { opacity: "0" },
+        },
+        "slide-in-left": {
+          "0%": { transform: "translateX(-100%)", opacity: "0" },
+          "100%": { transform: "translateX(0)", opacity: "1" },
+        },
+        "slide-in-right": {
+          "0%": { transform: "translateX(100%)", opacity: "0" },
+          "100%": { transform: "translateX(0)", opacity: "1" },
+        },
+        "fade-in-up": {
+          "0%": { transform: "translateY(20px)", opacity: "0" },
+          "100%": { transform: "translateY(0)", opacity: "1" },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "flicker": "flicker 3s infinite",
+        "flicker-subtle": "flicker-subtle 4s infinite",
+        "pulse-glow": "pulse-glow 1.5s infinite",
+        "float": "float 3s ease-in-out infinite",
+        "scroll-bounce": "scroll-bounce 2s ease-in-out infinite",
+        "lightning": "lightning 5s infinite",
+        "slide-in-left": "slide-in-left 0.5s ease-out",
+        "slide-in-right": "slide-in-right 0.5s ease-out",
+        "fade-in-up": "fade-in-up 0.6s ease-out",
       },
     },
   },
